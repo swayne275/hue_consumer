@@ -14,10 +14,37 @@ class App extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost/api/newdeveloper")
+      .get("http://localhost:8000/api/newdeveloper")
       .then(response => {
-        /*
-        // create an array of contacts only with relevant data
+        const data = response.data;
+        const newLights = [];
+
+        if (data.lights) {
+          const lights = data.lights;
+          Object.keys(lights).forEach(function(key) {
+            let light = lights[key];
+            console.log(light);
+            if (light.name) {
+              console.log(light.name);
+              newLights.push({
+                id: light.uniqueid,
+                name: light.name,
+              });
+            }
+          });
+
+          // create a new State object without mutating original State object
+          const newState = Object.assign({}, this.state, {
+            lights: newLights
+          });
+
+          // store the new state object in the component's state
+          this.setState(newState);
+        }
+      })
+     /*
+      .then(response => {
+        // create an array of lights only with relevant data
         const newLights = response.data.lights.map(c => {
           return {
             id: c.id,
@@ -29,16 +56,20 @@ class App extends Component {
         const newState = Object.assign({}, this.state, {
           lights: newLights
         });
-        */
-        const newLights = JSON.stringify(response.data);
-        console.log(newLights);
-        const newState = Object.assign({}. this.state, {
-          lights: newLights
-        });
+
         // store the new state object in the component's state
         this.setState(newState);
       })
-      .catch(error => console.log(error));
+      */
+      .catch(error => {
+        console.log('Network request failed');
+        console.log(error);
+        if (error.response) {
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        }
+      });
   }
 
   render() {
