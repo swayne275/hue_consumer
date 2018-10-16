@@ -9,15 +9,16 @@ class App extends Component {
 
   // default State object
   state = {
-    contacts: []
+    lights: []
   };
 
   componentDidMount() {
     axios
-      .get("https://jsonplaceholder.typicode.com/users")
+      .get("http://localhost/api/newdeveloper")
       .then(response => {
+        /*
         // create an array of contacts only with relevant data
-        const newContacts = response.data.map(c => {
+        const newLights = response.data.lights.map(c => {
           return {
             id: c.id,
             name: c.name
@@ -26,9 +27,14 @@ class App extends Component {
 
         // create a new "State" object without mutating original State object
         const newState = Object.assign({}, this.state, {
-          contacts: newContacts
+          lights: newLights
         });
-
+        */
+        const newLights = JSON.stringify(response.data);
+        console.log(newLights);
+        const newState = Object.assign({}. this.state, {
+          lights: newLights
+        });
         // store the new state object in the component's state
         this.setState(newState);
       })
@@ -43,7 +49,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to the Hue API consumer</h1>
         </header>
 
-        <LightList lights={this.state.contacts} />
+        <LightList lights={this.state.lights} />
       </div>
     );
   }
