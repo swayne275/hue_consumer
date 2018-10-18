@@ -23,9 +23,7 @@ class App extends Component {
           const lights = data.lights;
           Object.keys(lights).forEach(function(key) {
             let light = lights[key];
-            console.log(light);
             if (light.name) {
-              console.log(light.name);
               newLights.push({
                 id: light.uniqueid,
                 name: light.name,
