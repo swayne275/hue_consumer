@@ -23,10 +23,13 @@ class App extends Component {
           const lights = data.lights;
           Object.keys(lights).forEach(function(key) {
             let light = lights[key];
-            if (light.name) {
+            let state = light.state
+            if (light.name && light.type && state) {
               newLights.push({
                 id: light.uniqueid,
                 name: light.name,
+                type: light.type,
+                on: state.on ? 'On' : 'Off',
               });
             }
           });
