@@ -42,25 +42,6 @@ class App extends Component {
           this.setState(newState);
         }
       })
-     /*
-      .then(response => {
-        // create an array of lights only with relevant data
-        const newLights = response.data.lights.map(c => {
-          return {
-            id: c.id,
-            name: c.name
-          };
-        });
-
-        // create a new "State" object without mutating original State object
-        const newState = Object.assign({}, this.state, {
-          lights: newLights
-        });
-
-        // store the new state object in the component's state
-        this.setState(newState);
-      })
-      */
       .catch(error => {
         console.log('Network request failed');
         console.log(error);
