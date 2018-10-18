@@ -6,7 +6,12 @@ import Light from "./Light";
 function LightList(props) {
     return (
         <div>
-            {props.lights.map(l => <Light key={l.id} name={l.name} />)}
+            {props.lights.map(l => <Light
+                key={l.id}
+                name={l.name}
+                type={l.type}
+                on={l.on}
+            />)}
         </div>
     );
 }

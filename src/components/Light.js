@@ -5,13 +5,15 @@ import "./Light.css";
 function Light(props) {
     return (
         <div className="light">
-            <span>{props.name}</span>
+            <span>{props.name} ({props.type}): {props.on}</span>
         </div>
     );
 }
 
 Light.propTypes = {
-    name: PropTypes.string.isRequired
+    name: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    on: PropTypes.string.isRequired,
 };
 
 export default Light;
