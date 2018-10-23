@@ -5,8 +5,20 @@
     background-color: #eee;
 }
 
-.light span {
+.light h1 {
+    font-size: 2em;
+    text-decoration: none;
+    color: #333;
+}
+
+.light h2 {
     font-size: 1.2em;
+    text-decoration: none;
+    color: #333;
+}
+
+.light h3 {
+    font-size: 0.8em;
     text-decoration: none;
     color: #333;
 }
