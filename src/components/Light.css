@@ -5,20 +5,23 @@
     background-color: #eee;
 }
 
-.light h1 {
+.light name {
     font-size: 2em;
     text-decoration: none;
     color: #333;
+    display: block;
 }
 
-.light h2 {
+.light type {
     font-size: 1.2em;
     text-decoration: none;
     color: #333;
+    display: block;
 }
 
-.light h3 {
+.light content {
     font-size: 0.8em;
     text-decoration: none;
     color: #333;
+    display: block;
 }
