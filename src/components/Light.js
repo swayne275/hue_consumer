@@ -5,7 +5,9 @@ import "./Light.css";
 function Light(props) {
     return (
         <div className="light">
-            <span>{props.name} ({props.type}): {props.on}</span>
+            <name>{props.name}</name>
+            <type>{props.type}</type>
+            <content>Status: {props.on}</content>
         </div>
     );
 }
